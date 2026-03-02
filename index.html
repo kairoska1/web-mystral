@@ -29,6 +29,11 @@
     100%{transform:translateY(-800px) translateX(50px); opacity:0;}
   }
 
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
   /* Header */
   header{
     height:90vh;
@@ -43,44 +48,28 @@
   }
 
   header::before{
-    content:'';
-    position:absolute;
-    top:0; left:0; right:0; bottom:0;
-    background: linear-gradient(135deg,#1b0033,#2a0055);
-    z-index:-2;
+    content:''; position:absolute; top:0; left:0; right:0; bottom:0;
+    background: linear-gradient(135deg,#1b0033,#2a0055); z-index:-2;
   }
 
   header::after{
-    content:'';
-    position:absolute;
-    top:0; left:0; right:0; bottom:0;
-    background: rgba(0,0,0,0.25);
-    z-index:-1;
+    content:''; position:absolute; top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.25); z-index:-1;
   }
 
   header h1{
-    font-size:4rem;
-    font-weight:700;
-    margin-bottom:20px;
-    color:#f0e6ff;
-    letter-spacing:2px;
+    font-size:4rem; font-weight:700; margin-bottom:20px;
+    color:#f0e6ff; letter-spacing:2px;
     text-shadow:0 0 15px #b084ff;
   }
 
   header p{
-    font-size:1.3rem;
-    margin-bottom:35px;
-    max-width:650px;
-    opacity:0.9;
+    font-size:1.3rem; margin-bottom:35px; max-width:650px; opacity:0.9;
   }
 
   header a{
-    padding:16px 50px;
-    background:#8a2be2;
-    color:#fff;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
+    padding:16px 50px; background:#8a2be2; color:#fff;
+    border-radius:30px; text-decoration:none; font-weight:600;
     box-shadow:0 5px 20px rgba(138,43,226,0.4);
     transition:all 0.3s;
   }
@@ -180,7 +169,8 @@
 <header>
   <h1>MystralMC</h1>
   <p>Server Minecraft Dengan Nuansa Medieval Dan Adventure.</p>
-  <a href="#">Join Server</a>
+  <!-- Link diubah untuk scroll ke server-info -->
+  <a href="#server-info" id="joinBtn">Join Server</a>
 </header>
 
 <section>
@@ -206,7 +196,8 @@
   </div>
 </section>
 
-<section>
+<!-- Section target scroll -->
+<section id="server-info">
   <h2>Server Info</h2>
   <div class="server-info">
     <h3>Masuk Server</h3>
@@ -221,16 +212,24 @@
 
 <script>
   // Particle magic subtle
-  const particleCount=80;
-  for(let i=0;i<particleCount;i++){
-    const p=document.createElement('div');
-    p.className='particle';
-    p.style.left=Math.random()*100+'vw';
-    p.style.top=Math.random()*100+'vh';
-    p.style.width=Math.random()*3+2+'px';
-    p.style.height=p.style.width;
+  const particleCount = 80;
+  for (let i = 0; i < particleCount; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.top = Math.random() * 100 + 'vh';
+    p.style.width = Math.random() * 3 + 2 + 'px';
+    p.style.height = p.style.width;
     document.body.appendChild(p);
   }
+
+  // JS smooth scroll fallback (optional)
+  const joinBtn = document.getElementById('joinBtn');
+  joinBtn.addEventListener('click', function(e) {
+    e.preventDefault(); // cegah default anchor jump
+    const target = document.getElementById('server-info');
+    target.scrollIntoView({ behavior: 'smooth' });
+  });
 </script>
 
 </body>
