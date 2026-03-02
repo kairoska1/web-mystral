@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KerajaanMC - Premium Server Minecraft</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Montserrat',sans-serif;
+    color:#eee;
+    background: linear-gradient(135deg,#1b0033,#2a0055);
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  /* Animated particles */
+  .particle{
+    position:absolute;
+    border-radius:50%;
+    background: rgba(255,255,255,0.1);
+    width:3px; height:3px;
+    animation:float 20s linear infinite;
+  }
+  @keyframes float{
+    0%{transform:translateY(0) translateX(0); opacity:0.3;}
+    50%{opacity:0.6;}
+    100%{transform:translateY(-800px) translateX(50px); opacity:0;}
+  }
+
+  /* Header */
+  header{
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  header::before{
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: linear-gradient(135deg,#1b0033,#2a0055);
+    z-index:-2;
+  }
+
+  header::after{
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.25);
+    z-index:-1;
+  }
+
+  header h1{
+    font-size:4rem;
+    font-weight:700;
+    margin-bottom:20px;
+    color:#f0e6ff;
+    letter-spacing:2px;
+    text-shadow:0 0 15px #b084ff;
+  }
+
+  header p{
+    font-size:1.3rem;
+    margin-bottom:35px;
+    max-width:650px;
+    opacity:0.9;
+  }
+
+  header a{
+    padding:16px 50px;
+    background:#8a2be2;
+    color:#fff;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    box-shadow:0 5px 20px rgba(138,43,226,0.4);
+    transition:all 0.3s;
+  }
+
+  header a:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 35px rgba(138,43,226,0.6);
+  }
+
+  section{
+    padding:100px 20px;
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+    position:relative;
+  }
+
+  section h2{
+    font-size:2.8rem;
+    margin-bottom:40px;
+    color:#e0d0ff;
+    font-weight:600;
+  }
+
+  section p{
+    font-size:1.15rem;
+    max-width:800px;
+    margin:auto;
+    line-height:1.6;
+    opacity:0.9;
+  }
+
+  .features{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    margin-top:50px;
+  }
+
+  .feature-card{
+    background: rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:20px;
+    width:280px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+  }
+
+  .feature-card:hover{
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 10px 30px rgba(138,43,226,0.5);
+  }
+
+  .feature-card h3{
+    font-weight:600;
+    margin-bottom:15px;
+    font-size:1.6rem;
+  }
+
+  .server-info{
+    background: rgba(50,0,90,0.6);
+    padding:50px 25px;
+    border-radius:20px;
+    margin:80px auto;
+    max-width:450px;
+    box-shadow:0 5px 30px rgba(138,43,226,0.3);
+  }
+
+  .server-info h3{
+    font-size:1.8rem;
+    margin-bottom:20px;
+  }
+
+  .server-info p{
+    font-size:1.2rem;
+    margin:10px 0;
+  }
+
+  footer{
+    text-align:center;
+    padding:50px 20px;
+    background: rgba(0,0,50,0.85);
+    color:#ccc0ff;
+  }
+
+  /* Responsive */
+  @media(max-width:768px){
+    header h1{font-size:3rem;}
+    section h2{font-size:2rem;}
+    .feature-card{width:90%;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>MystralMC</h1>
+  <p>Server Minecraft Dengan Nuansa Medieval Dan Adventure.</p>
+  <a href="#">Join Server</a>
+</header>
+
+<section>
+  <h2>Tentang Server</h2>
+  <p>MystralMC menghadirkan pengalaman Minecraft medieval dan elegan. Bangun kastil, dan jelajahi dunia.</p>
+</section>
+
+<section>
+  <h2>Fitur</h2>
+  <div class="features">
+    <div class="feature-card">
+      <h3>PvP Strategis</h3>
+      <p>Bertarung dengan pemain lain dan tunjukkan skill PvP kamu.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Ekonomi & Kingdom</h3>
+      <p>Kumpulkan harta, kelola kerajaan, dan berkembang dengan strategi.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Farming</h3>
+      <p>Kumpulkan sumber daya sebanyak mungkin untuk menjadi kaya.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Server Info</h2>
+  <div class="server-info">
+    <h3>Masuk Server</h3>
+    <p><strong>IP:</strong> mystralmc.top</p>
+    <p><strong>Port:</strong> 25619</p>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 MystralMC. Ikuti kami di Discord & sosial media.
+</footer>
+
+<script>
+  // Particle magic subtle
+  const particleCount=80;
+  for(let i=0;i<particleCount;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    p.style.left=Math.random()*100+'vw';
+    p.style.top=Math.random()*100+'vh';
+    p.style.width=Math.random()*3+2+'px';
+    p.style.height=p.style.width;
+    document.body.appendChild(p);
+  }
+</script>
+
+</body>
+</html>
